@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CS639 - Data Management for Data Science (Spring 2019)</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="container">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CS 564</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#description">Description</a></li>
+              <li><a href="#logistics">Class Logistics</a></li>
+              <li><a href="#lecture">Lecture Plan</a></li>
+              <li><a href="#grading">Grading</a></li>
+              <li class="divider"></li>
+              <li><a href="#staff">Staff</a></li>
+              <li class="divider"></li>
+              <li><a href="#late-policy">Late Policy</a></li>
+              <li><a href="#honor-code">Honor Code</a></li>              
+            </ul>
+          </li>
+          <li><a href="#office-hours">Office Hours</a></li>          
+          <li><a href="https://piazza.com/wisc/spring2019/cs639">Piazza</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div class="jumbotron">
+<h1>CS639 Data Management for Data Science</h1>
+<h3>Birge Hall 145 on MonWedFri 2:25-3:15pm</h3>
+<p class="lead">Chat with us on <a href="https://piazza.com/wisc/spring2019/cs639">the course Piazza site</a> if you have any questions!</p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Description</div>
+  <div class="panel-body">
+    <a name="description"></a>
+<p>Data science incorporates practices from a variety of fields including statistics, machine learning, databases, distributed systems, algorithms, data warehousing, high-performance computing, and visualization. Thus, at a minimum, today's data scientist needs to have familiarity with: data processing and management tools like relational databases and NoSQL for processing large volumes of data; scripting languages like Python for quickly writing programs to clean and transform messy raw data; basic machine learning and data mining algorithms for analyzing the data; statistical computing environments for writing analysis scripts; and visualization tools for presentation and communication of analysis results. 
+
+This class will study techniques and systems for ingesting, efficiently processing, analyzing, and visualizing large data sets. Students will learn how to model and reason about data, and how to process and manipulate it in various ways. Topics will include data cleaning, data integration, scalable systems (relational databases, NoSQL, MapReduce, etc.), analytics (data cubes, scalable statistics and machine learning), and scalable visualization of large data sets.
+
+</p>
+<p> There will be <b>six programming assignments (PAs)</b> that will explore Database Design and SQL, MapReduce, basic Machine Learning, Data Integration, and Data Visualization.</p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Class Logistics</div>
+  <div class="panel-body">
+	  <a name="logistics"></a>
+	  <p> <b>Course Prerequisites</b>
+	  <ul>
+		<li><p>CS 300 is absolutely essential. CS 400 might be helpful.</p></li>
+	  </ul>
+	  </p>
+	  <p> <b>Programming Tools</b>
+	  <ul>
+		<li><p>For the programming assignments we will utilize <b>Python</b> and <b>IPython Notebooks</b>. All necessary in a virtual box etc... FINISH WITH DETAILS.</p></li>
+	  </ul>
+	  </p>
+	  <p><b>Textbook</b>
+	  	<ul>
+		<li>There is no required textbook for the course. Lecture slides will be self-contained. Additional readings will be posted together with the lecture slides.</li>
+		<li>The following two books can be useful for you to consult. Both books are availble for free online at <a href="http://proquest.safaribooksonline.com/">Safari Books Online</a> <b>if you are on the UW network</b>.
+			<ul>
+				<li><a href="http://proquest.safaribooksonline.com/book/programming/python/9781449323592">Python for Data Analysis</a>, Wes McKinney, 2012</li>
+				<li><a href="http://proquest.safaribooksonline.com/book/databases/9781449363871">Doing Data Science</a>, Cathy O'Neil and Rachel Schutt, 2013</li>
+			</ul>
+		</li>
+	  </ul>
+	  </p>
+	  <p><b>Assignments</b>
+	    <ul>
+	      <li>All programming assignments are <b>individual</b> assignments. Each student must send us an individual submission.</li>
+	      <li>Programming assignments are due <b> by the end of day </b> on the indicated dates.</li>
+	      <li>All assignments will be submitted via <b>Canvas</b>.FINISH Canvas Setup.</li>
+	      <li>You are allowed <b> 5 free late days </b> to use throughout the semester. One late day equals one 24 hour period after the due date of the assignment. Once you have used your late days, there will be a 20% penalty for each day an assignment is late.</li>
+	      <li>The honor code described below will be enforced for both types of assignments.</li>
+	    </ul>
+	  </p>
+   </div>
+   </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Lecture Plan</h2>
+  </div>
+  <div class="panel-body">
+    <a name="lecture"></a>
+    <p>
+The reading material listed below is optional, but you are highly encouraged to read it.
+    </p>
+    <p>
+    <hr /> 
+
+<table class="plan">
+  <tbody>
+    <tr>
+      <th>#</th>
+      <th>Date</th>
+      <th>Topic</th>
+      <th>Lecture Materials</th>
+      <th><i>Extra</i> Reading Material</th>
+      <th>Assignments</th>
+    </tr>
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Introduction to Data Science</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1/23</td>
+      <td>Intro to Data Science and Class Logistics/Overview</td>
+      <td class="side-borders">
+      Lecture 1      
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td> 
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>1/25</td>
+      <td>Statistical Inference and Exploratory Data Analsysis</td>
+      <td class="side-borders">
+      Lecture 2      
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 0:</b> Virtual Box installation and setup</td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>2/4</td>
+      <td>Getting Started with Data Analytics: In Class Demonstration</td>
+      <td class="side-borders">
+      In class demonstration of PA1
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 1: </b>Twitter Sentiment Analysis. <font color="red"><b>Due on February, 14th.</b></font></td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Relational Databases and Relational Algebra</td>
+    </tr>
+
+    <tr>
+      <td>4</td>
+      <td>2/6</td>
+      <td>Principles of Data Management</td>
+      <td class="side-borders">
+      Lecture 4
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>5</td>
+      <td>2/8</td>
+      <td>Relational Algebra</td>
+      <td class="side-borders">
+      Lecture 5
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>6</td>
+      <td>2/11</td>
+      <td><b>No Class</b></td>
+      <td class="side-borders">      
+      	<font color="blue">Theo out of town.</font>
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>7</td>
+      <td>2/13</td>
+      <td>SQL for Data Science</td>
+      <td class="side-borders">
+      Lecture 6
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>8</td>
+      <td>2/15</td>
+      <td>Key Principles of RDBMS</td>
+      <td class="side-borders">
+      Lecture 7
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 2: </b>SQL for Data Science Assignment. <font color="red"><b>Due on February, 21st.</b></font></td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">The MapReduce Model and No SQL Systems.</td>
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td>2/18</td>
+      <td>Reasoning about Scale</td>
+      <td class="side-borders">
+      Lecture 8
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>10</td>
+      <td>2/20</td>
+      <td>The MapReduce Programming Model</td>
+      <td class="side-borders">
+      Lecture 9
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>11</td>
+      <td>2/22</td>
+      <td>Algorithms in MapReduce</td>
+      <td class="side-borders">
+      Lecture 10
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 3: </b>MapReduce Assignment. <font color="red"><b>Due on February, 28th.</b></font></td>
+    </tr>
+
+    <tr>
+      <td>12</td>
+      <td>2/25</td>
+      <td>NoSQL Systems: What do they solve?</td>
+      <td class="side-borders">
+      Lecture 11
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>13</td>
+      <td>2/27</td>
+      <td>KeyValue Stores and Document Stores</td>
+      <td class="side-borders">
+      Lecture 12
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>14</td>
+      <td>3/1</td>
+      <td>Spark</td>
+      <td class="side-borders">
+      Lecture 13
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>15</td>
+      <td>3/4</td>
+      <td>Graph Databases</td>
+      <td class="side-borders">
+      Lecture 14
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr class ="exam">
+      <td>16</td>
+      <td>3/6</td>
+      <td>Midterm Review</td>
+      <td class="side-borders">
+      	Midterm Review Lecture        
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td> 
+    </tr>
+
+    <tr class ="exam">
+      <td>17</td>
+      <td>3/8</td>
+      <td>Midterm</td>
+      <td class="side-borders">      
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td> 
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Predictive Analytics</td>
+    </tr>
+
+    <tr>
+      <td>18</td>
+      <td>3/11</td>
+      <td>Statistical Inference</td>
+      <td class="side-borders">
+      Lecture 15
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>19</td>
+      <td>3/13</td>
+      <td>Sampling</td>
+      <td class="side-borders">
+      Lecture 16
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>20</td>
+      <td>3/15</td>
+      <td>Bayesian Methods</td>
+      <td class="side-borders">
+      Lecture 17
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>-</td>
+      <td>3/16 - 3/24</td>
+      <td><b>Spring Break</b></td>
+      <td class="side-borders">      
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>21</td>
+      <td>3/25</td>
+      <td>Decision Trees</td>
+      <td class="side-borders">
+      Lecture 18
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>27</td>
+      <td>3/27</td>
+      <td>Supervised Learning</td>
+      <td class="side-borders">
+      Lecture 19
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>28</td>
+      <td>3/29</td>
+      <td>Evaluation of Machine Learning Models</td>
+      <td class="side-borders">
+      Lecture 20
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 4: </b>Classification Assignment. <font color="red"><b>Due on April, 4th.</b></font></td>
+    </tr>
+
+    <tr>
+      <td>29</td>
+      <td>4/1</td>
+      <td>Unsupervised Learning</td>
+      <td class="side-borders">
+      Lecture 21
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>30</td>
+      <td>4/3</td>
+      <td>Ensemble Learning</td>
+      <td class="side-borders">
+      Lecture 22
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>31</td>
+      <td>4/5</td>
+      <td>Optimization/Gradient Descent</td>
+      <td class="side-borders">
+      Lecture 23
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Information Extraction and Data Integration</td>
+    </tr>
+
+    <tr>
+      <td>32</td>
+      <td>4/8</td>
+      <td>Information Extraction</td>
+      <td class="side-borders">
+      Lecture 24
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>33</td>
+      <td>4/10</td>
+      <td>Data Integration and Entity Resolution</td>
+      <td class="side-borders">
+      Lecture 25
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>34</td>
+      <td>4/12</td>
+      <td>Data Cleaning</td>
+      <td class="side-borders">
+      Lecture 26
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 5: </b>Data Integration Assignment. <font color="red"><b>Due on April, 18th.</b></font></td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Communicating Insights</td>
+    </tr>
+
+    <tr>
+      <td>35</td>
+      <td>4/15</td>
+      <td>Data Types and Visual Mappings</td>
+      <td class="side-borders">
+      Lecture 27
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>35</td>
+      <td>4/17</td>
+      <td>Data Visualization</td>
+      <td class="side-borders">
+      Lecture 28
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>36</td>
+      <td>4/19</td>
+      <td>Exploratory Data Analysis</td>
+      <td class="side-borders">
+      Lecture 29
+      </td>      
+      <td class="side-borders"></td> 
+      <td><b>PA 6: </b>Visualization of NYC Taxi Data. <font color="red"><b>Due on April, 25th.</b></font></td>
+    </tr>
+
+    <tr>
+      <td>37</td>
+      <td>4/22</td>
+      <td>Introduction to Data Privacy</td>
+      <td class="side-borders">
+      Lecture 30
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>38</td>
+      <td>4/24</td>
+      <td>Differential Privacy</td>
+      <td class="side-borders">
+      Lecture 31
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>38</td>
+      <td>4/26</td>
+      <td>Differential Privacy Systems</td>
+      <td class="side-borders">
+      Lecture 32
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="6" class="small-section-header">Exam Review</td>
+    </tr>
+
+    <tr class="exam">
+      <td>39</td>
+      <td>4/29</td>
+      <td>Final Review</td>
+      <td class="side-borders">
+      	Final Review part 1
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td> 
+    </tr>
+
+    <tr class="exam">
+      <td>40</td>
+      <td>5/1</td>
+      <td>Final Review</td>
+      <td class="side-borders">
+      	Final Review part 2
+      </td>      
+      <td class="side-borders"></td> 
+      <td></td> 
+    </tr>
+
+  </tbody>
+</table>
+
+</p>
+</div>
+</div> 
+
+<div class="panel panel-default">
+  <div class="panel-heading">Midterm Exam</div>
+  <div class="panel-body">
+    The midterm exam will be in class on <b>March 8th from 2:25pm - 3:15pm</b>.  The location will be:
+    <ul>
+      <li>Birge Hall 145</li>      
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Final Exam</div>
+  <div class="panel-body">
+    The final exam will be on <b>TDB</b>.     
+  </div>
+</div> 
+
+<div class="panel panel-default">
+  <div class="panel-heading">Grading</div>
+  <div class="panel-body">
+    <a name="grading"></a>
+    <table class="table">      
+      <tr><td>Programming Assignments</td><td>45%</td>      
+      <tr><td>Midterm</td><td>20%</td>
+      <tr><td>Final</td><td>35%</td>
+    </table>    
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Office Hours</div>
+  <div class="panel-body">
+    <a name="office-hours"></a>
+    <p>Theo: Monday, Wednesday, Friday 3:15 - 4:15 pm (after class), or by appointment @ Room CS4361</p>
+    <p>Huawei Wang: TBD</p>
+    <p>Shenghao Zou:  TBD</p>    
+<p>
+<b><i>
+Note: the schedule of office hours may change from time to time,
+in which case an announcement will be made on the course Piazza.
+</i></b>
+</p>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Staff</div>
+  <div class="panel-body">
+    <a name="staff"></a>
+    <table class="table">
+      <thead>
+        <tr><th></th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td><img src="./img/theo.jpg"></td><td><a href="http://pages.cs.wisc.edu/~thodrek/">Theo</a> (thodrek@cs.wisc.edu)</td></tr>
+        <tr><td><img src="./img/TBD.jpg"></td><td> Huawei Wang (hwang665@wisc.edu)</td></tr>
+        <tr><td><img src="./img/TBD.jpg"></td><td> Shenghao Zou (szou28@wisc.edu)</td></tr>        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Late Policy</div>
+  <div class="panel-body">
+  <a name="late-policy"></a>
+You are allowed <b> 5 free late days </b> to use throughout the semester. One late day equals one 24 hour period after the due date of the assignment. Once you have used your late days, there will be a 20% penalty for each day an assignment is late.
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Honor Code and Collaboration Policy</div>
+  <div class="panel-body">
+<a name="honor-code"></a>
+<p>
+We encourage you to discuss the Programming Assignments with other students; it's fine to discuss overall strategy and collaborate with a partner or in a small group, as both giving and receiving advice will help you to learn.
+</p>
+<p>
+However, you must write your own solutions to all of the problems, and <b>you must cite all people you worked with</b>.
+</p>
+<p>
+It's not OK to share code or write code collaboratively. (This includes posting and/or sharing your code publicly, such as on GitHub!)
+</p>
+<p>If you do not do so, we will consider this a violation of the <a href="https://conduct.students.wisc.edu/academic-integrity/">University of Wisconsin Honor Code</a>.
+</p>
+<p>
+If you consult any resources outside of the materials provided in
+class, you must cite these sources. We reserve the right to assign a
+penalty if your answers are substantially derivative, but, as long as
+you provide appropriate citations, we will not consider this an Honor
+Code violation.
+</p>
+  </div>
+</div>
+
+</div>
+</body>
+
+</html>
