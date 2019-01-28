@@ -59,7 +59,7 @@ def main():
     new_term_sent = term_sentiment(sent_scores, tweets_file)
 
     for term in new_term_sent:        
-        print(term, avg_score)
+        print(term, new_term_sent[term])
 
 
 if __name__ == '__main__':
