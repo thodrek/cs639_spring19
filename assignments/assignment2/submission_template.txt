@@ -23,7 +23,7 @@
             
         </name>
         <sunet>
-            <!-- Insert your SUNet ID (NOT your student ID number!) below. -->
+            <!-- Insert your UWNet ID (NOT your student ID number!) below. -->
 
         </sunet>
     </student>
